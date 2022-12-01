@@ -1,17 +1,25 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
+    fun part1(input: List<String>) =
+        sumCaloriesByElves(input).max()
+
+    fun part2(input: List<String>) =
+        sumCaloriesByElves(input).sortedDescending().take(3).sum()
+
+    val input = readInput("day01_input")
+
+    val result1 = part1(input)
+    println(result1)
+
+    val result2 = part2(input)
+    println(result2)
+}
+
+fun sumCaloriesByElves(input: List<String>) = sequence {
+    var sum = 0
+    input.forEach { s ->
+        when (val i = s.toIntOrNull()) {
+            null -> { yield(sum); sum = 0 }
+            else -> sum += i
+        }
     }
-
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
 }
