@@ -11,8 +11,9 @@ fun main() {
     println(result1)
 
     val result2 = input.asSequence()
-        .chunked(3) { it.map { s -> s.toSet() } }
-        .map { it[0] intersect it[1] intersect it[2] }
+        .map { it.toSet() }
+        .chunked(3)
+        .map { (a, b, c) -> a intersect b intersect c }
         .sumOf { priorities.getValue(it.single()) }
     println(result2)
 }
