@@ -8,15 +8,15 @@ fun main() {
         .map { it.substringBefore(' ').single() to it.substringAfter(' ').toInt() }
 
     val directions = mapOf(
-        'U' to Coordinate(0, 1),
-        'D' to Coordinate(0, -1),
-        'L' to Coordinate(-1, 0),
-        'R' to Coordinate(1, 0)
+        'U' to Coordinate2D(0, 1),
+        'D' to Coordinate2D(0, -1),
+        'L' to Coordinate2D(-1, 0),
+        'R' to Coordinate2D(1, 0)
     )
 
     fun countVisitedTailPositions(knotCount: Int): Int {
-        val visited = mutableSetOf<Coordinate>()
-        val knots = MutableList(knotCount) { Coordinate(x = 0, y = 0) }
+        val visited = mutableSetOf<Coordinate2D>()
+        val knots = MutableList(knotCount) { Coordinate2D(x = 0, y = 0) }
         moves.forEach { (d, r) ->
             repeat(r) {
                 knots[0] += directions.getValue(d)
@@ -38,10 +38,7 @@ fun main() {
     println(result2)
 }
 
-data class Coordinate(val x: Int, val y: Int) {
-    operator fun plus(other: Coordinate) = copy(x = x + other.x, y = y + other.y)
+private infix fun Coordinate2D.isAdjacentTo(other: Coordinate2D) = abs(other.x - x) < 2 && abs(other.y - y) < 2
 
-    infix fun isAdjacentTo(other: Coordinate) = abs(other.x - x) < 2 && abs(other.y - y) < 2
-
-    infix fun movedTowards(other: Coordinate) = this + Coordinate((other.x - x).sign, (other.y - y).sign)
-}
+private infix fun Coordinate2D.movedTowards(other: Coordinate2D) =
+    this + Coordinate2D((other.x - x).sign, (other.y - y).sign)
