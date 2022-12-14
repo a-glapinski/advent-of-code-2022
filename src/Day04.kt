@@ -1,7 +1,7 @@
 import kotlin.math.max
 
 fun main() {
-    val input = readInput("day04_input")
+    val input = readInputAsLines("day04_input")
 
     val assignments = input.asSequence()
         .map { it.split(',', '-') }

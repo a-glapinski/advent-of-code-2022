@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInput("day08_input_test")
+    val input = readInputAsLines("day08_input_test")
     val grid = input.map { it.map(Char::digitToInt) }
 
     val result1 = flyOver(grid,

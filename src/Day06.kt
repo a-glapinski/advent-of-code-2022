@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInputText("day06_input")
+    val input = readInputAsText("day06_input")
 
     val result1 = input
         .windowedSequence(4) { it.toSet() }

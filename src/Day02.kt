@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInput("day02_input")
+    val input = readInputAsLines("day02_input")
 
     val m = mapOf('A' to 0, 'B' to 1, 'C' to 2, 'X' to 0, 'Y' to 1, 'Z' to 2)
 

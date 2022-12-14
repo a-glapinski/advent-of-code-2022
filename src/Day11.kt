@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInputText("day11_input")
+    val input = readInputAsText("day11_input")
     val monkeys = input.split("\n\n").map { Monkey(note = it.lines()) }
 
     fun playKeepAway(monkeys: List<Monkey>, roundCount: Int, calculateWorryLevel: (Long, Int) -> Long): Long {

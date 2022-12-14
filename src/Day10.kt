@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInput("day10_input")
+    val input = readInputAsLines("day10_input")
 
     val cycles = input.asSequence()
         .map { it.substringAfter(' ').toIntOrNull() }

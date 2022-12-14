@@ -2,7 +2,7 @@ import FilesystemStructure.Directory
 import FilesystemStructure.File
 
 fun main() {
-    val input = readInputText("day07_input")
+    val input = readInputAsText("day07_input")
     val regex = Regex("""\$\s+(\w+)\s+([\s\S]+?)(?=\s+\$|\Z)""")
     val commands = regex.findAll(input)
         .map { it.groupValues }

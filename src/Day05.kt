@@ -1,5 +1,5 @@
 fun main() {
-    val (stacksInput, proceduresInput) = readInput("day05_input").asSequence()
+    val (stacksInput, proceduresInput) = readInputAsLines("day05_input").asSequence()
         .filter { it.isNotBlank() }
         .partition { !it.startsWith("move") }
 

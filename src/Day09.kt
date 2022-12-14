@@ -2,7 +2,7 @@ import kotlin.math.abs
 import kotlin.math.sign
 
 fun main() {
-    val input = readInput("day09_input")
+    val input = readInputAsLines("day09_input")
 
     val moves = input.asSequence()
         .map { it.substringBefore(' ').single() to it.substringAfter(' ').toInt() }

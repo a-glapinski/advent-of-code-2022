@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInput("day03_input")
+    val input = readInputAsLines("day03_input")
 
     val priorities =
         ('a'..'z').associateWith { c -> c.code - 96 } + ('A'..'Z').associateWith { c -> c.code - 64 + 26 }

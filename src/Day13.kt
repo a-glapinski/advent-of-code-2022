@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInputText("day13_input")
+    val input = readInputAsText("day13_input")
 
     val packetPairs = input.splitToSequence("\n\n")
         .map { it.split("\n") }

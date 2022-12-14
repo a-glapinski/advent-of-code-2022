@@ -1,5 +1,5 @@
 fun main() {
-    val input = readInput("day12_input")
+    val input = readInputAsLines("day12_input")
     val heightmap =
         input.flatMapIndexed { i, row -> row.mapIndexed { j, height -> Coordinate2D(i, j) to height } }.toMap()
 

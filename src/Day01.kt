@@ -5,7 +5,7 @@ fun main() {
     fun part2(input: List<String>) =
         sumCaloriesByElves(input).sortedDescending().take(3).sum()
 
-    val input = readInput("day01_input")
+    val input = readInputAsLines("day01_input")
 
     val result1 = part1(input)
     println(result1)
