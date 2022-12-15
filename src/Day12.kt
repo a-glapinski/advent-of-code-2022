@@ -43,7 +43,3 @@ private fun Map<Coordinate2D, Char>.getElevation(coordinate: Coordinate2D) =
         'E' -> 'z'
         else -> c
     }
-
-private fun Coordinate2D.neighbours() = directions.map(::plus)
-
-private val directions = listOf(Coordinate2D(0, 1), Coordinate2D(0, -1), Coordinate2D(1, 0), Coordinate2D(-1, 0))
