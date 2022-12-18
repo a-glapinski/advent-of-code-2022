@@ -1,3 +1,6 @@
+import utils.component6
+import utils.readInputAsLines
+
 fun main() {
     val (stacksInput, proceduresInput) = readInputAsLines("day05_input").asSequence()
         .filter { it.isNotBlank() }

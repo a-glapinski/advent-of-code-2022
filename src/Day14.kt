@@ -1,4 +1,6 @@
 import Day14.move
+import utils.Coordinate2D
+import utils.readInputAsLines
 
 fun main() {
     val input = readInputAsLines("day14_input")

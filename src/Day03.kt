@@ -1,3 +1,5 @@
+import utils.readInputAsLines
+
 fun main() {
     val input = readInputAsLines("day03_input")
 

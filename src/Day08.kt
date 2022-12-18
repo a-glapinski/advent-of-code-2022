@@ -1,3 +1,5 @@
+import utils.readInputAsLines
+
 fun main() {
     val input = readInputAsLines("day08_input_test")
     val grid = input.map { it.map(Char::digitToInt) }

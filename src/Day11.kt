@@ -1,3 +1,5 @@
+import utils.readInputAsText
+
 fun main() {
     val input = readInputAsText("day11_input")
     val monkeys = input.split("\n\n").map { Monkey(note = it.lines()) }

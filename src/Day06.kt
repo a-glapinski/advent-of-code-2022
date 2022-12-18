@@ -1,3 +1,5 @@
+import utils.readInputAsText
+
 fun main() {
     val input = readInputAsText("day06_input")
 

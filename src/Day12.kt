@@ -1,3 +1,6 @@
+import utils.Coordinate2D
+import utils.readInputAsLines
+
 fun main() {
     val input = readInputAsLines("day12_input")
     val heightmap =

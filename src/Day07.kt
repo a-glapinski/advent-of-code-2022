@@ -1,5 +1,6 @@
 import FilesystemStructure.Directory
 import FilesystemStructure.File
+import utils.readInputAsText
 
 fun main() {
     val input = readInputAsText("day07_input")
