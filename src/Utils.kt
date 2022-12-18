@@ -21,9 +21,11 @@ data class Coordinate2D(val x: Int, val y: Int) {
     infix fun lineTo(other: Coordinate2D): List<Coordinate2D> {
         val dx = (other.x - x).sign
         val dy = (other.y - y).sign
-        val distance = maxOf(abs(x - other.x), abs(y - other.y))
-        return (1..distance).scan(this) { last, _ -> Coordinate2D(last.x + dx, last.y + dy) }
+        val steps = maxOf(abs(x - other.x), abs(y - other.y))
+        return (1..steps).scan(this) { last, _ -> Coordinate2D(last.x + dx, last.y + dy) }
     }
+
+    infix fun distanceTo(other: Coordinate2D) = abs(x - other.x) + abs(y - other.y)
 
     companion object {
         val directions = listOf(Coordinate2D(0, 1), Coordinate2D(0, -1), Coordinate2D(1, 0), Coordinate2D(-1, 0))
@@ -31,3 +33,9 @@ data class Coordinate2D(val x: Int, val y: Int) {
 }
 
 infix fun Int.towards(to: Int) = IntProgression.fromClosedRange(this, to, step = if (this > to) -1 else 1)
+
+infix fun IntRange.union(other: IntRange): IntRange =
+    when (this.first <= other.last && this.last >= other.first) {
+        true -> IntRange(minOf(this.first, other.first), maxOf(this.last, other.last))
+        false -> IntRange.EMPTY
+    }
